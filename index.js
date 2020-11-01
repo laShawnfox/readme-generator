@@ -2,7 +2,15 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 console.log("hello world!");
 
+
 //array of questions for user
+inquirer.prompt ({}
+     type: "input",
+     message: "What is your name?",
+     name: "name"
+]).then(response =>{
+    console.log(response);
+})
 const questions = [
 
 ];
