@@ -44,45 +44,45 @@ const htmlTemplate = `<!DOCTYPE html>
         <link rel="stylesheet" href="">
     </head>
     <body>
-      <heading>${response.title}</heading>
+      <heading>#${response.title}</heading>
 
-      <h2>description</h2>
+      <h2># Description</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
          <ul>
-           <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md${response.githubLink}></a></li>
-           <li><a href="https://wwww.github.com/${response.githubURL}></a></li>
+           <li><a href="https://github.com/laShawnfox/readme-generator${response.githubLink}></a></li>
+           <li><a href="https://lashawnfox.github.io/readme-generator/${response.githubURL}></a></li>
          </ul>
         <br>
       <h2>Table of Contents</h2>
-      <p><a href="index.js/Installation>Installation</a>
+      <p><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">INSTALLATION</a>
        <br>
-          USAGE
+       <a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">USAGE</a>
        <br>
-          LICENSE
+       <a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">LICENSE</a>
        <br>
-          CONTRIBUTING
+       <a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">CONTRIBUTING</a>
        <br>
-          TESTS
+       <a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">TESTS</a>
        <br>
-          QUESTIONS               
+       <a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">QUESTIONS</a>              
       </p>
       <br>
-      <h2>Installation</h2>
+      <h2> # Installation</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
     </br>
-      <h2> Usage</h2>
+      <h2> # Usage</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
     </br>
-      <h2>License</h2>
+      <h2> # License</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
     </br>
-      <h2>Contributing</h2>
+      <h2> # Contributing</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
       <br>
-      <h2>Tests</h2>
+      <h2> # Tests</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
       <br>
-      <h2>Questions</h2>
+      <h2> # Questions</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
  
         <script src="" async defer></script>
