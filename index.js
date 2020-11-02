@@ -22,8 +22,8 @@ inquirer.prompt ([
 },
 {
   type: "input",
-  message: "What is your name?",
-  name: "name"
+  message: "What is your URL?",
+  name: "githubURL"
 }
 ]).then(response =>{
     console.log(response);
@@ -48,9 +48,24 @@ const htmlTemplate = `<!DOCTYPE html>
 
       <h2>description</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
-      <br>
+         <ul>
+           <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md${response.githubLink}></a></li>
+           <li><a href="https://wwww.github.com/${response.githubURL}></a></li>
+         </ul>
+        <br>
       <h2>Table of Contents</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+      <p><a href="index.js/Installation>Installation</a>
+       <br>
+          USAGE
+       <br>
+          LICENSE
+       <br>
+          CONTRIBUTING
+       <br>
+          TESTS
+       <br>
+          QUESTIONS               
+      </p>
       <br>
       <h2>Installation</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
