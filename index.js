@@ -24,11 +24,17 @@ inquirer.prompt ([
   type: "input",
   message: "What is your URL?",
   name: "githubURL"
+},
+{
+  type: "input",
+  message: "What is your email?",
+  name: "linkEmail"
 }
 ]).then(response =>{
     console.log(response);
 })
 // const questions = [
+//       "What is your name?", "What is the title?", "What are the links?", "What is your URL?", "What is your email?"
 
 // ];
  
