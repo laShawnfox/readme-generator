@@ -1,5 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./generateMarkdown");
 console.log("hello world!");
   
 
@@ -29,6 +30,41 @@ inquirer.prompt ([
   type: "input",
   message: "What is your email?",
   name: "linkEmail"
+},
+{
+type: "input",
+  message: "Enter Description of Project",
+  name: "description"
+},
+{
+type: "input",
+  message: "Enter you Installation Process.",
+  name: "installation"
+},
+{
+type: "input",
+  message: "Enter Usage information",
+  name: "usage"
+},
+{
+type: "input",
+  message: "Enter Contributing.",
+  name: "contributing"
+},
+{
+type: "input",
+  message: "How was this tested?",
+  name: "tests"
+},
+{
+type: "input",
+  message: "What are questions about the project?",
+  name: "questions"
+},
+{
+type: "input",
+  message: "Enter licence information",
+  name: "license"
 }
 ]).then(response =>{
     console.log(response);
@@ -50,14 +86,6 @@ const htmlTemplate = `<!DOCTYPE html>
     </head>
     <body>
       <heading>#${response.title} by ${response.name} email: ${response.linkEmail}</heading>
-
-      <h2># Description</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
-         <ul>
-           <li><a href="https://github.com/laShawnfox/readme-generator${response.githubLink}>Github</a></li>
-           <li><a href="https://lashawnfox.github.io/readme-generator/${response.githubURL}></a>Github Link</li>
-          </ul>
-        <br>
       <h2>#Table of Contents</h2>
       <p>
         <ul>
@@ -71,9 +99,16 @@ const htmlTemplate = `<!DOCTYPE html>
        
          <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">TESTS</a></li> 
        
-         <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">QUESTIONS</a> </li>              
+         <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">QUESTIONS</a></li>              
          </ul>
-       </p>
+      </p>
+      <h2># Description</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+         <ul>
+           <li><a href="https://github.com/laShawnfox/readme-generator${response.githubLink}>Github</a></li>
+           <li><a href="https://lashawnfox.github.io/readme-generator/${response.githubURL}></a>Github Link</li>
+          </ul>
+      
       <br>
       <h2> # Installation</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
@@ -108,7 +143,9 @@ fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
 
 
 // function writeToFile(fileName, data) {
+ // fs.writeToFile(generateMarkdown, data){
 
+  //}
 // }
 
 // function to initialize program
