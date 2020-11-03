@@ -103,7 +103,7 @@ const htmlTemplate = `<!DOCTYPE html>
          </ul>
       </p>
       <h2># Description</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+        <p>${response.description}Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
          <ul>
            <li><a href="https://github.com/laShawnfox/readme-generator${response.githubLink}>Github</a></li>
            <li><a href="https://lashawnfox.github.io/readme-generator/${response.githubURL}></a>Github Link</li>
@@ -111,22 +111,22 @@ const htmlTemplate = `<!DOCTYPE html>
       
       <br>
       <h2> # Installation</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+      <p>${response.installation}</p>
     </br>
       <h2> # Usage</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
-    </br>
-      <h2> # License</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+      <p>${response.usage}</p>
     </br>
       <h2> # Contributing</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+      <p>${response.contributing}</p>
       <br>
       <h2> # Tests</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+      <p>${response.test}</p>
       <br>
       <h2> # Questions</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+      <p>${response.questions}</p>
+      </br>
+        <h2> # License</h2>
+        <p>${response.licence}</p>
     </body>
 </html>`;
 // function to write README file
