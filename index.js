@@ -1,6 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./generateMarkdown");
+const license = ["MIT", "Apache", "GPL"]
+//const generateMarkdown = require("./generateMarkdown");
 console.log("hello world!");
   
 
@@ -62,15 +63,16 @@ type: "input",
   name: "tests"
 },
 {
-type: "input",
-  message: "Enter licence information",
+  type: "checkbox",
+  message: "Choose a license.",
+  choices: license,
   name: "license"
-}
+},
 ]).then(response =>{
     console.log(response);
+   // const generateMarkdown = generateMarkdown(response);
     const questions = [
       "What is your name?", "What is the title?", "What are the links?", "What is your URL?", "What is your email?"
-
 ];
  
 const htmlTemplate = `<!DOCTYPE html>
@@ -85,13 +87,14 @@ const htmlTemplate = `<!DOCTYPE html>
         <link rel="stylesheet" href="">
     </head>
     <body>
-      <heading>#${response.title} by ${response.name} email: ${response.linkEmail}</heading>
+      <heading><h1>${response.title} by ${response.name}</h1></heading>
       <h2>Table of Contents</h2>
       <p>
         <ul>
-        <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">DESCRIPTION</a></li> 
+        <li>[Description]:https://github.com/laShawnfox/readme-generator/blob/main/README.md</li> 
 
-         <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">INSTALLATION</a></li> 
+
+         <li>[INSTALLATION](<a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md"></a>)</li> 
       
          <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">USAGE</a></li> 
        
