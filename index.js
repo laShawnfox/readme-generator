@@ -13,6 +13,11 @@ inquirer.prompt ([
   },
   {
     type: "input",
+    message: "What is your github username?",
+    name: "username"
+ },
+  {
+    type: "input",
     message: "What is the Title?",
     name: "title"
  },
@@ -58,11 +63,6 @@ type: "input",
 },
 {
 type: "input",
-  message: "What are questions about the project?",
-  name: "questions"
-},
-{
-type: "input",
   message: "Enter licence information",
   name: "license"
 }
@@ -86,9 +86,11 @@ const htmlTemplate = `<!DOCTYPE html>
     </head>
     <body>
       <heading>#${response.title} by ${response.name} email: ${response.linkEmail}</heading>
-      <h2>#Table of Contents</h2>
+      <h2>Table of Contents</h2>
       <p>
         <ul>
+        <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">DESCRIPTION</a></li> 
+
          <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">INSTALLATION</a></li> 
       
          <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">USAGE</a></li> 
@@ -102,30 +104,30 @@ const htmlTemplate = `<!DOCTYPE html>
          <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">QUESTIONS</a></li>              
          </ul>
       </p>
-      <h2># Description</h2>
-        <p>${response.description}Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente omnis deleniti harum architecto veritatis, adipisci ullam illo, explicabo aliquid voluptatum eos tempora cumque dignissimos at doloribus recusandae. Iste, saepe.</p>
+      <h2> Description</h2>
+        <p>${response.description}</p>
          <ul>
-           <li><a href="https://github.com/laShawnfox/readme-generator${response.githubLink}>Github</a></li>
-           <li><a href="https://lashawnfox.github.io/readme-generator/${response.githubURL}></a>Github Link</li>
+           <li>My github link:${response.githubLink}</li>
+           <li>My Readme URL: ${response.githubURL}</li>
           </ul>
       
       <br>
-      <h2> # Installation</h2>
+      <h2>  Installation</h2>
       <p>${response.installation}</p>
     </br>
-      <h2> # Usage</h2>
+      <h2>  Usage</h2>
       <p>${response.usage}</p>
     </br>
-      <h2> # Contributing</h2>
+      <h2> Contributing</h2>
       <p>${response.contributing}</p>
       <br>
-      <h2> # Tests</h2>
+      <h2>  Tests</h2>
       <p>${response.test}</p>
       <br>
-      <h2> # Questions</h2>
-      <p>${response.questions}</p>
+      <h2> Questions</h2>
+      <p>My github username is ${response.username} and I can be contacted by email: ${response.linkEmail} ${response.questions}</p>
       </br>
-        <h2> # License</h2>
+        <h2> License</h2>
         <p>${response.licence}</p>
     </body>
 </html>`;
