@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const license = ["MIT", "Apache", "GPL"]
 const badge = ("![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)");
 //const generateMarkdown = require("./generateMarkdown");
-console.log("hello world!");
+//console.log("hello world!");
   
 
 //array of questions for user
@@ -25,8 +25,8 @@ inquirer.prompt ([
  },
  {
   type: "input",
-  message: "What are the links?",
-  name: "githubLinks"
+  message: "What is the link?",
+  name: "githubLink"
 },
 {
   type: "input",
@@ -133,11 +133,11 @@ const htmlTemplate = `<!DOCTYPE html>
       <hr>
       <br>
       <h2>  Tests</h2>
-      <p>${response.test}</p>
+      <p>${response.tests}</p>
       <hr>
       <br>
       <h2> Questions</h2>
-      <p>My github username is ${response.username} and I can be contacted by email: ${response.linkEmail} ${response.questions}</p>
+      <p>My github username is ${response.username} and I can be contacted by email: ${response.linkEmail}</p>
       </br>
       <hr>
         <h2> License</h2>
@@ -153,10 +153,10 @@ fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
 
 
 
-//  function writeToFile(fileName, data){
-       const fileName = Date.now();
-//     fs.writwFile(fileName + ".md")
-//  };
+  // function writeToFile(fileName, data){
+  //      const fileName = Date.now();
+  //    fs.writwFile(fileName + ".md");
+  // }
 
 // function to initialize program
 // function init(generateMarkdown) {
@@ -164,7 +164,7 @@ fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
 //     questions[i].push(generateMarkdown)
 //   };
 
-// }
+//  }
 
 // function call to initialize program 
 //init(); 
