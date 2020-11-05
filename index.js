@@ -2,7 +2,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const license = ["MIT", "Apache", "GPL"]
 const badge = ("![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)");
-const generateMarkdown = require("./generateMarkdown");
+//const generateMarkdown = require("./generateMarkdown");
 console.log("hello world!");
   
 
@@ -69,16 +69,12 @@ type: "input",
   choices: license,
   name: "license"
 },
-{
-  type: "",
-  message: "",
-  name: "badge"
-},
 ]).then(response =>{
     console.log(response);
-   const generateMarkdown = generateMarkdown(response);
+   //const generateMarkdown = generateMarkdown(response);
     const questions = [
-      "What is your name?", "What is the title?", "What are the links?", "What is your URL?", "What is your email?"
+      "What is your name?", "What is your github username","What is the title?", "What are the links?", "What is your URL?", "What is your email?", "Enter description of project", "Enter your installation Process",
+      "Enter usage information", "Enter contributing", "How was this tested", "Choose a license"
 ];
  
 const htmlTemplate = `<!DOCTYPE html>
@@ -93,7 +89,7 @@ const htmlTemplate = `<!DOCTYPE html>
         <link rel="stylesheet" href="">
     </head>
     <body>
-      <heading><h1>${response.title} by ${response.name}</h1>![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)</heading>
+      <heading><h1>${response.title} by ${response.name}</h1></heading>
       <p>${response.badge}</p>
 
       <hr>
@@ -154,21 +150,21 @@ fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
     console.log("Success Readme!");
 });
 })
-// const questions = [
-//       "What is your name?", "What is the title?", "What are the links?", "What is your URL?", "What is your email?"
-
-// ];
- 
 
 
- function writeToFile(generateMarkdown, data){
-    if(err) throw(err);
- };
+
+//  function writeToFile(fileName, data){
+       const fileName = Date.now();
+//     fs.writwFile(fileName + ".md")
+//  };
 
 // function to initialize program
-function init() {
+// function init(generateMarkdown) {
+//   for(let i =0; i<questions.length; i++){
+//     questions[i].push(generateMarkdown)
+//   };
 
-}
+// }
 
 // function call to initialize program 
-init(); 
+//init(); 
