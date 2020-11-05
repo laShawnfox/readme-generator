@@ -2,7 +2,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const license = ["MIT", "Apache", "GPL"]
 const badge = ("![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)");
-//const generateMarkdown = require("./generateMarkdown");
+const generateMarkdown = require("./generateMarkdown");
 console.log("hello world!");
   
 
@@ -70,13 +70,13 @@ type: "input",
   name: "license"
 },
 {
-  type: "checkbox",
-  message: "Choose a license.",
+  type: "",
+  message: "",
   name: "badge"
 },
 ]).then(response =>{
     console.log(response);
-   // const generateMarkdown = generateMarkdown(response);
+   const generateMarkdown = generateMarkdown(response);
     const questions = [
       "What is your name?", "What is the title?", "What are the links?", "What is your URL?", "What is your email?"
 ];
@@ -94,25 +94,25 @@ const htmlTemplate = `<!DOCTYPE html>
     </head>
     <body>
       <heading><h1>${response.title} by ${response.name}</h1>![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)</heading>
+      <p>${response.badge}</p>
 
       <hr>
       <h2>Table of Contents</h2>
       <p>
         <ul>
-        <li>[Description]:https://github.com/laShawnfox/readme-generator/blob/main/README.md</li> 
+        <li><a href="#description">DESCRIPTION</a></li> 
 
+          <li><a href="#installation">INSTALLATION</a></li>  
+        
+           <li><a href="#usage">USAGE</a></li>
+        
+           <li><a href="#contributing">CONTRIBUTING</a></li> 
+         
+           <li><a href="#tests">TESTS</a></li> 
+         
+           <li><a href="#questions">QUESTIONS</a></li>
 
-         <li><a href="#installation">INSTALLATION</a></li> 
-      
-         <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">USAGE</a></li> 
-       
-         <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">LICENSE</a></li> 
-      
-         <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">CONTRIBUTING</a></li> 
-       
-         <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">TESTS</a></li> 
-       
-         <li><a href="https://github.com/laShawnfox/readme-generator/blob/main/README.md">QUESTIONS</a></li>              
+           <li><a href="#license">LICENSE</a></li>           
          </ul>
       </p>
       <hr>
@@ -161,11 +161,9 @@ fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
  
 
 
-// function writeToFile(fileName, data) {
- // fs.writeToFile(generateMarkdown, data){
-
-  //}
-// }
+ function writeToFile(generateMarkdown, data){
+    if(err) throw(err);
+ };
 
 // function to initialize program
 function init() {
