@@ -89,8 +89,7 @@ const htmlTemplate = `<!DOCTYPE html>
         <link rel="stylesheet" href="">
     </head>
     <body>
-      <heading><h1>${response.title} by ${response.name}</h1></heading>
-      <p>${response.badge}</p>
+     
 
       <hr>
       <h2>Table of Contents</h2>
