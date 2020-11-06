@@ -40,7 +40,7 @@ inquirer.prompt ([
 },
 {
 type: "input",
-  message: "Enter Description of Project",
+  message: "Enter Description of Project.",
   name: "description"
 },
 {
@@ -50,7 +50,7 @@ type: "input",
 },
 {
 type: "input",
-  message: "Enter Usage information",
+  message: "Enter Usage information.",
   name: "usage"
 },
 {
@@ -152,16 +152,21 @@ fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
 
 
 
-  // function writeToFile(fileName, data){
+   function writeToFile(fileName, data){
   //      const fileName = Date.now();
-  //    fs.writwFile(fileName + ".md");
+  //    fs.writeFile(fileName + ".md");
   // }
 
 // function to initialize program
-// function init(generateMarkdown) {
-//   for(let i =0; i<questions.length; i++){
-//     questions[i].push(generateMarkdown)
-//   };
+ function init() {
+  inquirer.prompt(questions).then ((answers) => {
+    const response = generateMarkdown(answers);
+    console.log(answers);
+
+    writeToFile("README.md", response);
+  })
+
+  };
 
 //  }
 
