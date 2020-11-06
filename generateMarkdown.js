@@ -7,7 +7,7 @@ function generateMarkdown(data) {
      ![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)</heading>
         ${response.badge}
   
-        <hr>
+        
         ## Table of Contents
         *[Description](#description)
         *[Installation](#installation)
@@ -17,7 +17,7 @@ function generateMarkdown(data) {
         *[Questions](#questions)
         *[Licence](#license)
         
-        <hr>
+        
         ##  Description
           ${response.description}
           
