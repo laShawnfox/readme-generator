@@ -107,7 +107,7 @@ type: "input",
 //       </p>
 //       <hr>
 //       <h2> Description</h2>
-//         <p>${response.description}</p>
+        
 //          <ul>
 //            <li>My github link:${response.githubLink}</li>
 //            <li>My Readme URL: ${response.githubURL}</li>
@@ -141,14 +141,16 @@ type: "input",
 
 //function to write README file
 
-// fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
-//     if(err) throw(err);
+// fs.writeFile("index.html",htmlTemplate, "utf8", (err) => {
+//     if(err) {
+//       throw(err);
 //     console.log("Success Readme!");
+//     }
 // });
-// })
 
 
 
+ 
    function writeToFile(fileName, data) {
      fs.writeFile(fileName, data, (err) => {
        if (err) {
@@ -159,8 +161,9 @@ type: "input",
    } 
 // function to initialize program
  function init() {
+
   inquirer.prompt(questions).then ((answers) => {
-    const response = generateMarkdown(answers);
+    const readMe = generateMarkdown(answers);
     console.log(answers);
 
     writeToFile("README.md", response);
