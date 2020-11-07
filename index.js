@@ -2,12 +2,12 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const license = ["MIT", "Apache", "GPL"]
 const badge = ("![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)");
-//const generateMarkdown = require("./generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 //console.log("hello world!");
   
 
 //array of questions for user
-inquirer.prompt ([
+const questions = [
   {
      type: "input",
      message: "What is your name?",
@@ -69,16 +69,13 @@ type: "input",
   choices: license,
   name: "license"
 },
-]).then(response =>{
-    console.log(response);
-   //const generateMarkdown = generateMarkdown(response);
-    const questions = [
-      "What is your name?", "What is your github username","What is the title?", "What are the links?", "What is your URL?", "What is your email?", "Enter description of project", "Enter your installation Process",
-      "Enter usage information", "Enter contributing", "How was this tested", "Choose a license"
-];
+]
+// .then(response =>{
+//     console.log(response);
+//    const generateMarkdown = generateMarkdown(response);
+// })
  
 const htmlTemplate = `<!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -90,13 +87,11 @@ const htmlTemplate = `<!DOCTYPE html>
     </head>
     <body>
      
-
       <hr>
       <h2>Table of Contents</h2>
       <p>
         <ul>
         <li><a href="#description">DESCRIPTION</a></li> 
-
           <li><a href="#installation">INSTALLATION</a></li>  
         
            <li><a href="#usage">USAGE</a></li>
@@ -106,7 +101,6 @@ const htmlTemplate = `<!DOCTYPE html>
            <li><a href="#tests">TESTS</a></li> 
          
            <li><a href="#questions">QUESTIONS</a></li>
-
            <li><a href="#license">LICENSE</a></li>           
          </ul>
       </p>
@@ -143,17 +137,18 @@ const htmlTemplate = `<!DOCTYPE html>
         <p>${response.licence}</p>
     </body>
 </html>`;
-// function to write README file
+
+//function to write README file
 fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
     if(err) throw(err);
     console.log("Success Readme!");
 });
-})
+// })
 
 
 
    function writeToFile(fileName, data){
-     fs.writeFile(fileName, date, (err) => {
+     fs.writeFile(fileName, data, (err) => {
        if (err) {
          throw err;
          console.log("It's a Readme!");
@@ -170,8 +165,8 @@ fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
   })
 
   };
+  }
 
-//  }
 
 // function call to initialize program 
 //init(); 
