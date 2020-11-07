@@ -1,13 +1,13 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `
+  return ` #{data.title}
   
   
 
 
      # ${response.title} by ${response.name}
-     ![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)</heading>
-        ${response.badge}
+     ![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)
+      
   
         
         ## Table of Contents
@@ -44,6 +44,7 @@ function generateMarkdown(data) {
         
         ##License
          ${response.licence}
+         Copyright (c) 2020.
    `;
   
  
