@@ -1,11 +1,11 @@
 // function to generate markdown for README
-function generateMarkdown(response) {
+function generateMarkdown(data) {
   return ` 
   
   
 
 
-     # ${response.title} by ${response.name}
+     # ${data.title} by ${data.name}
      ![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)
       
   
@@ -21,29 +21,29 @@ function generateMarkdown(response) {
         
         
         ##  Description
-          ${response.description}
+          ${data.description}
           
-          My github link:  ${response.githubLink}
-          My Readme URL:   ${response.githubURL}
+          My github link:  ${data.githubLink}
+          My Readme URL:   ${data.githubURL}
             
         
         ## Installation
-        ${response.installation}
+        ${data.installation}
        
         ## Usage
-        ${response.usage}
+        ${data.usage}
         
         ## Contributing
-        ${response.contributing}
+        ${data.contributing}
         
         ##  Tests
-        ${response.test}
+        ${data.test}
         
         ## Questions
-        My github username is ${response.username} and I can be contacted by email: ${response.linkEmail} ${response.questions}
+        My github username is ${data.username} and I can be contacted by email: ${data.linkEmail} ${data.questions}
         
         ##License
-         ${response.licence}
+         ${data.licence}
          Copyright (c) 2020.
    `;
   

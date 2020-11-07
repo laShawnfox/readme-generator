@@ -1,14 +1,15 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const license = ["MIT", "Apache", "GPL", "No License"]
-// const badge = ("![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)");
+
 const generateMarkdown = require("./utils/generateMarkdown");
 const utils = require("util");
 //console.log("hello world!");
   
+//const writeFileAsync = util.promisify(fs.writeFile);
 
 //array of questions for user
-const questions = () =>
+const questionsP = () =>
 inquirer.prompt = ([
   {
      type: "input",
@@ -71,103 +72,49 @@ type: "input",
   choices: license,
   name: "license"
 },
-]).then(response =>{
-    console.log(response);
+]);
+
+// .then(response =>{
+    // console.log(response);
    //const generateMarkdown = generateMarkdown(response);
- });
+//  });
  
-// const htmlTemplate = `<!DOCTYPE html>
-// <html>
-//     <head>
-//         <meta charset="utf-8">
-//         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//         <title>README</title>
-//         <meta name="description" content="">
-//         <meta name="viewport" content="width=device-width, initial-scale=1">
-//         <link rel="stylesheet" href="">
-//     </head>
-//     <body>
-     
-//       <hr>
-//       <h2>Table of Contents</h2>
-//       <p>
-//         <ul>
-//         <li><a href="#description">DESCRIPTION</a></li> 
-//           <li><a href="#installation">INSTALLATION</a></li>  
-        
-//            <li><a href="#usage">USAGE</a></li>
-        
-//            <li><a href="#contributing">CONTRIBUTING</a></li> 
-         
-//            <li><a href="#tests">TESTS</a></li> 
-         
-//            <li><a href="#questions">QUESTIONS</a></li>
-//            <li><a href="#license">LICENSE</a></li>           
-//          </ul>
-//       </p>
-//       <hr>
-//       <h2> Description</h2>
-        
-//          <ul>
-//            <li>My github link:${response.githubLink}</li>
-//            <li>My Readme URL: ${response.githubURL}</li>
-//           </ul>
-//       <hr>
-//       <br>
-//       <h2>  Installation</h2>
-//       <p>${response.installation}</p>
-//       <hr>
-//     </br>
-//       <h2>  Usage</h2>
-//       <p>${response.usage}</p>
-//       </hr>
-//     </br>
-//       <h2> Contributing</h2>
-//       <p>${response.contributing}</p>
-//       <hr>
-//       <br>
-//       <h2>  Tests</h2>
-//       <p>${response.tests}</p>
-//       <hr>
-//       <br>
-//       <h2> Questions</h2>
-//       <p>My github username is ${response.username} and I can be contacted by email: ${response.linkEmail}</p>
-//       </br>
-//       <hr>
-//         <h2> License</h2>
-//         <p>${response.licence}</p>
-//     </body>
-// </html>`;
+
 
 //function to write README file
 
-// fs.writeFile("index.html",htmlTemplate, "utf8", (err) => {
-//     if(err) {
-//       throw(err);
-//     console.log("Success Readme!");
-//     }
-// });
+ const writeFileAsync = utils.promisify(fs.writeFile);
+
 
 
 
  
-   function writeToFile(fileName, data) {
-     fs.writeFile(fileName, data, (err) => {
-       if (err) {
-         throw err;
-       }
-       console.log("It's a Readme!");
-     });
-   } 
+  //  function writeToFile(fileName, data) {
+    //  fs.writeFile("Readme.md", data, (err) => {
+    //    if (err) {
+    //      throw err;
+    //    }
+    //    console.log("It's a Readme!");
+    //  });
+   //} 
 // function to initialize program
- function init() {
+ //function init() {
 
-  inquirer.prompt(questions).then ((answers) => {
-    const readMe = generateMarkdown(answers);
-    console.log(answers);
+  // inquirer.prompt(questions).then ((answers) => {
+  //   const readMe = generateMarkdown(answers);
+  //   console.log(answers);
 
-    writeToFile("README.md", response);
-  })
+  //   writeToFile("README.md", response);
+  // })
+  const init = async () => {
+    try {
+      const questions = await questionsP();
+      const data = generateMarkdown(questions);
+      await writeFileAsync("README.md", data);
+      console.log("This is the README.md");
+    } catch (err) {
+      console.log(err);
+    }
 
   };
   
