@@ -153,9 +153,12 @@ fs.writeFile("index.html",htmlTemplate, "utf8", (err) =>{
 
 
    function writeToFile(fileName, data){
-  //      const fileName = Date.now();
-  //    fs.writeFile(fileName + ".md");
-  // }
+     fs.writeFile(fileName, date, (err) => {
+       if (err) {
+         throw err;
+         console.log("It's a Readme!");
+       }
+     })
 
 // function to initialize program
  function init() {
