@@ -1,9 +1,8 @@
- 
-  
+# Readme Generator
   
 
 
-     # undefined by undefined
+     # Shakana Fox
      ![NPM](https://img.shields.io/npm/l/readme-generator?logo=bitcoin&style=for-the-badge)
       
   
@@ -19,26 +18,26 @@
         
         
         ##  Description
-          undefined
+          Generate Readme
           
-          My github link:  undefined
-          My Readme URL:   undefined
+          My github link:  https://github.com/laShawnfox/readme-generator
+          My Readme URL:    https://lashawnfox.github.io/readme-generator/
             
         
         ## Installation
-        undefined
+        npm install
        
         ## Usage
-        undefined
+        generate readme
         
         ## Contributing
-        undefined
+        Open to Public.
         
         ##  Tests
         undefined
         
         ## Questions
-        My github username is undefined and I can be contacted by email: undefined undefined
+        My github username is LaShawnFox and I can be contacted by email: foxshakana@gmail.com undefined
         
         ##License
          undefined

@@ -6,11 +6,12 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const utils = require("util");
 //console.log("hello world!");
   
-//const writeFileAsync = util.promisify(fs.writeFile);
+
 
 //array of questions for user
-const questionsP = () =>
-inquirer.prompt = ([
+const questionsPrompt = () =>
+
+inquirer.prompt([
   {
      type: "input",
      message: "What is your name?",
@@ -74,10 +75,10 @@ type: "input",
 },
 ]);
 
-// .then(response =>{
-    // console.log(response);
-   //const generateMarkdown = generateMarkdown(response);
-//  });
+//  .then(response =>{
+//     console.log(response);
+//    //const generateMarkdown = generateMarkdown(response);
+//   });
  
 
 
@@ -90,27 +91,28 @@ type: "input",
 
  
   //  function writeToFile(fileName, data) {
-    //  fs.writeFile("Readme.md", data, (err) => {
-    //    if (err) {
-    //      throw err;
-    //    }
-    //    console.log("It's a Readme!");
-    //  });
-   //} 
-// function to initialize program
- //function init() {
+  //    fs.writeFile("Readme.md", data, (err) => {
+  //      if (err) {
+  //        throw err;
+  //      }
+  //      console.log("It's a Readme!");
+  //    });
+  //  } 
+//function to initialize program
+//  function init() {
 
-  // inquirer.prompt(questions).then ((answers) => {
-  //   const readMe = generateMarkdown(answers);
-  //   console.log(answers);
+//   inquirer.prompt(questions).then ((answers) => {
+//     const response = generateMarkdown(answers);
+//     console.log(response);
 
-  //   writeToFile("README.md", response);
-  // })
+//     writeToFile("README.md", response);
+//   })
   const init = async () => {
     try {
-      const questions = await questionsP();
+      const questions = await questionsPrompt();
       const data = generateMarkdown(questions);
       await writeFileAsync("README.md", data);
+      //console.log(response);
       console.log("This is the README.md");
     } catch (err) {
       console.log(err);
