@@ -75,11 +75,7 @@ type: "input",
 },
 ]);
 
-//  .then(response =>{
-//     console.log(response);
-//    //const generateMarkdown = generateMarkdown(response);
-//   });
- 
+
 
 
 //function to write README file
@@ -90,23 +86,9 @@ type: "input",
 
 
  
-  //  function writeToFile(fileName, data) {
-  //    fs.writeFile("Readme.md", data, (err) => {
-  //      if (err) {
-  //        throw err;
-  //      }
-  //      console.log("It's a Readme!");
-  //    });
-  //  } 
+
 //function to initialize program
-//  function init() {
 
-//   inquirer.prompt(questions).then ((answers) => {
-//     const response = generateMarkdown(answers);
-//     console.log(response);
-
-//     writeToFile("README.md", response);
-//   })
   const init = async () => {
     try {
       const questions = await questionsPrompt();
