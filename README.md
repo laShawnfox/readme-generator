@@ -18,26 +18,26 @@
         
         
         ##  Description
-          Generate Readme
+          Create a command line application that dynamicaly generates a README.md.
           
           My github link:  https://github.com/laShawnfox/readme-generator
-          My Readme URL:    https://lashawnfox.github.io/readme-generator/
+          My Readme URL:   https://lashawnfox.github.io/readme-generator/
             
         
         ## Installation
-        npm install
+        run node index.js
        
         ## Usage
-        generate readme
+        run node index.js
         
         ## Contributing
-        Open to Public.
+        Non contributors.
         
         ##  Tests
         undefined
         
         ## Questions
-        My github username is LaShawnFox and I can be contacted by email: foxshakana@gmail.com undefined
+        My github username is Lashawnfox and I can be contacted by email: foxshakana@gmail.com undefined
         
         ##License
          undefined
